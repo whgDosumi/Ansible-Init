@@ -31,6 +31,7 @@ for key in "${SSH_PUBLIC_KEYS[@]}"; do
 done
 
 # Set proper permissions for the .ssh directory and authorized_keys file
+sudo chown -R "$ANSIBLE_USER:$ANSIBLE_USER" "$SSH_DIR"
 sudo chmod 700 "$SSH_DIR"
 sudo chmod 600 "$AUTHORIZED_KEYS_FILE"
 
